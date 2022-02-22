@@ -1,0 +1,60 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  outline: none;
+  list-style: none;
+  text-decoration: none;
+}
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+body {
+  background: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+canvas {
+  width: 80rem;
+  height: 70rem;
+  border: 0.3rem solid antiquewhite;
+}
+
+.container {
+  color: antiquewhite;
+  font-family: Futura, Arial, Helvetica, sans-serif;
+  font-size: 4rem;
+  font-weight: 700;
+  margin: 3rem 0 3rem 0;
+  display: flex;
+  width: 80rem;
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
+  /* flex-direction: column; */
+}
+
+.bawitdaba {
+  color: rgb(15, 15, 15);
+  text-shadow: -0.3rem -0.3rem 0.8rem rgba(0, 135, 253, 0.135),
+    0.3rem 0.3rem 0.8rem rgba(240, 248, 255, 0.122);
+  font-family: Futura, Arial, Helvetica, sans-serif;
+  font-size: 3rem;
+  font-weight: 700;
+  width: auto;
+}
+
+.bawitdaba:hover {
+  color: aliceblue;
+  text-shadow: -0.3rem -0.3rem 1rem rgba(0, 135, 253, 0.45),
+    0.3rem 0.3rem 1rem rgba(240, 248, 255, 0.43);
+  cursor: pointer;
+  transition: all 5s;
+}
