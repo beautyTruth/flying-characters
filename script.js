@@ -2,6 +2,8 @@ const canvasEl = document.querySelector("canvas");
 const ctx = canvasEl.getContext("2d");
 CANVAS_WIDTH = canvasEl.width = 500;
 CANVAS_HEIGHT = canvasEl.height = 1000;
+const numberOfEnemies = 100;
+const enemiesArray = [];
 
 /*
 enemy1 = {
@@ -14,20 +16,32 @@ enemy1 = {
 
 class Enemy {
   constructor() {
-    this.x = 10;
-    this.y = 50;
+    this.x = Math.random() * canvasEl.width;
+    this.y = Math.random() * canvasEl.height;
     this.width = 100;
     this.height = 100;
+    this.speed = Math.random() * 4 - 2;
+  }
+  update() {
+    this.x += this.speed;
+    this.y += this.speed;
+  }
+  draw() {
+    ctx.strokeRect(this.x, this.y, this.width, this.height);
   }
 }
 
-const enemy1 = new Enemy();
+for (let i = 0; i < numberOfEnemies; i++) {
+  enemiesArray.push(new Enemy());
+}
 
 function animate() {
   ctx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
-  enemy1.x++;
-  enemy1.y++;
-  ctx.fillRect(enemy1.x, enemy1.y, enemy1.width, enemy1.height);
+
+  enemiesArray.forEach((boobie) => {
+    boobie.update();
+    boobie.draw();
+  });
   requestAnimationFrame(animate);
 }
 
